@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Asistentes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="seccionBienvenida">
+            <h1>Registro de Eventos</h1>
+            <p>Por favor, introduce el nombre del evento para comenzar.</p>
+            <input type="text" id="nombreEventoInput" placeholder="Ej: Concierto de Verano">
+            <button id="btnComenzar">Comenzar Registro</button>
+        </div>
+
+        <div id="seccionPrincipal" style="display: none;">
+            <h1 id="tituloEvento"></h1>
+        <div id="seleccionTipo">
+            <h2>¿Asistente Local o Turista?</h2>
+            <div class="botones-seleccion">
+                <button type="button" data-valor="Local"><img src="img/local.png" alt="Local"> Local</button>
+                <button type="button" data-valor="Turista"><img src="img/turista.png" alt="Turista"> Turista</button>
+            </div>
+        </div>
+
+        <div id="seleccionGenero" style="display: none;">
+            <h2>¿Género del Asistente?</h2>
+            <div class="botones-seleccion">
+                <button type="button" data-valor="Masculino"><img src="img/masculino.png" alt="Masculino"> Masculino</button>
+                <button type="button" data-valor="Femenino"><img src="img/femenino.png" alt="Femenino"> Femenino</button>
+                <button type="button" data-valor="No Binario"><img src="img/no-binario.png" alt="No Binario"> No Binario</button>
+            </div>
+            <button type="button" class="btn-volver" data-paso-anterior="seleccionTipo">Volver</button>
+        </div>
+
+        <div id="seleccionEdad" style="display: none;">
+            <h2>¿Rango de Edad del Asistente?</h2>
+            <div class="botones-seleccion">
+                <button type="button" data-valor="0-17"><img src="img/niño.png" alt="0-17"> 0 - 17</button>
+                <button type="button" data-valor="18-26"><img src="img/joven.png" alt="18-26"> 18 - 26</button>
+                <button type="button" data-valor="27-59"><img src="img/adulto.png" alt="27-59"> 27 - 59</button>
+                <button type="button" data-valor="Mayor de 60"><img src="img/mayor.png" alt="Mayor de 60"> +60</button>
+            </div>
+            <button type="button" class="btn-volver" data-paso-anterior="seleccionGenero">Volver</button>
+        </div>
+
+        <div class="info">
+            Registros en esta sesión: <b id="counter">0</b>
+        </div>
+    </div>
+
+<div id="modal-overlay">
+    <div class="modal-content">
+        <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
